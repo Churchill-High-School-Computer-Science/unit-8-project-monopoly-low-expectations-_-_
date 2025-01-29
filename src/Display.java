@@ -175,16 +175,16 @@ public class Display extends JFrame {
         communityChest.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Cards cars = new Cards.drawRandomCommunityChestCard();
-                JOptionPane.showMessageDialog(frame, cars.getMessage, "Community Chest", JOptionPane.INFORMATION_MESSAGE);
+                Cards.Card card = Cards.drawRandomCommunityChestCard();
+                JOptionPane.showMessageDialog(frame, card.getMessage(), "Community Chest", JOptionPane.INFORMATION_MESSAGE);
             }
         });
 
         chance.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(frame, "Chance Button Clicked!");
-            }
+                Cards.Card card = Cards.drawRandomChanceCard();
+                JOptionPane.showMessageDialog(frame, card.getMessage(), "Community Chest", JOptionPane.INFORMATION_MESSAGE);            }
         });
 
         // Add the custom board
