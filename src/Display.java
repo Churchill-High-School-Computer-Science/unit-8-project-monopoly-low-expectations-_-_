@@ -19,23 +19,15 @@ public class Display extends JFrame {
             super.paintComponent(g);
             Graphics2D g2d = (Graphics2D) g;
 
-            // Draw the board background
-            g2d.setColor(new Color(255, 255, 204));
+            g2d.setColor(new Color(205, 230, 208));
             g2d.fillRect(0, 0, 75 * 11, 75 * 11);
 
-            // Draw grid and properties
             g2d.setColor(Color.BLACK);
             for (int i = 0; i < properties.length; i++) {
                 for (int j = 0; j < properties[i].length; j++) {
                     if (i == 0 || i == 10 || j == 0 || j == 10) {
                         g2d.setColor(Color.BLACK);
                         g2d.drawRect(i * 75, j * 75, 75, 75);
-                       /*  if (properties[i][j] == null) {
-                            properties[i][j] = new Property();
-                            
-                        }
-                        drawProperty(properties[i][j], g2d, i, j);
-                        for testing*/
                          if (properties[i][j] != null) {
                             drawProperty(properties[i][j], g2d, i, j);
                         }
@@ -44,7 +36,6 @@ public class Display extends JFrame {
                 }
             }
 
-            //Draw player assets
             drawPlayerAssets(g2d);
             drawPlayers(g2d);
         }
