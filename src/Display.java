@@ -20,7 +20,7 @@ public class Display extends JFrame {
             Graphics2D g2d = (Graphics2D) g;
 
             // Draw the board background
-            g2d.setColor(new Color(240, 230, 200));
+            g2d.setColor(new Color(255, 255, 204));
             g2d.fillRect(0, 0, 75 * 11, 75 * 11);
 
             // Draw grid and properties
@@ -158,11 +158,11 @@ public class Display extends JFrame {
         frame.setLayout(null); // Allow manual positioning
 
         // Configure buttons
-        communityChest.setBackground(new Color(0, 100, 200));
+        communityChest.setBackground(new Color(51, 153, 255));
         communityChest.setBounds(200, 200, 150, 50);
         frame.add(communityChest);
 
-        chance.setBackground(new Color(0, 100, 200));
+        chance.setBackground(new Color(255, 153, 0));
         chance.setBounds(400, 200, 150, 50);
         frame.add(chance);
 

@@ -2,20 +2,37 @@
 import java.awt.Color;
 
 public class Property {
-    
+
+    Color color;
+    String name;
+    String owner;
+    int numHouses;
+    int mortgage;
+    int unmortgage;
+
+    public Property(Color c, String n, String o, int m, int um)
+    {
+
+        color = c;
+        name = n;
+        owner = o;
+        mortgage = m;
+        unmortgage = um;
+    }
+
     //TODO fix
     public Color getColor(){
-        return new Color(255, 0, 0);
+        return color;
     }
 
     //TODO fix
     public String getName(){
-        return "nothing";
+        return name;
     }
 
     //TODO fix
     public int getNumHouses(){
-        return 5;
+        return numHouses;
     }
 
     //TODO fix
