@@ -175,7 +175,8 @@ public class Display extends JFrame {
         communityChest.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(frame, "Community Chest Button Clicked!");
+                Cards cars = new Cards.drawRandomCommunityChestCard();
+                JOptionPane.showMessageDialog(frame, cars.getMessage, "Community Chest", JOptionPane.INFORMATION_MESSAGE);
             }
         });
 

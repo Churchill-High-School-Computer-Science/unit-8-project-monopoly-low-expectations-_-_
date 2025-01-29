@@ -50,11 +50,6 @@ public class Board {
         properties[2][0] = new Property(new Color(255, 255, 204), "Luxury Tax", "100", 0, 0);
         properties[1][0] = new Property(new Color(51, 153, 51), "Boardwalk", "400",200,220);
 
-        
-
-
-
-
     }
     
 }
