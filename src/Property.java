@@ -6,14 +6,21 @@ public class Property {
     private final String name;
     @SuppressWarnings("FieldMayBeFinal")
     private String owner;
+    @SuppressWarnings("FieldMayBeFinal")
     private int numHouses;
     private final int mortgage;
     private final int unmortgage;
-    private  int[] houseRents;
-    private  boolean isRailroad;
-    private  boolean isUtility;
+    @SuppressWarnings("FieldMayBeFinal")
+    private int[] houseRents;
+    @SuppressWarnings("FieldMayBeFinal")
+    private boolean isRailroad;
+    @SuppressWarnings("FieldMayBeFinal")
+    private boolean isUtility;
+    @SuppressWarnings("FieldMayBeFinal")
     private boolean isPurchasable;  
+    @SuppressWarnings("FieldMayBeFinal")
     private boolean isChance;
+    @SuppressWarnings("FieldMayBeFinal")
     private boolean isCommunityChest;
 
     public Property(Color c, String n, String o, int nH, int m, int um, int[] hR, boolean iR, boolean iU, boolean iP, boolean iC, boolean iCC)
@@ -56,7 +63,6 @@ public class Property {
     public int getUnMorgage(){
         return unmortgage;
     }
-
 
     public int[] getRent(){
         return houseRents;
