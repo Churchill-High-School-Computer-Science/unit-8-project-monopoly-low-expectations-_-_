@@ -107,7 +107,6 @@ public class Display extends JFrame {
 
         private void drawPlayerAssets(Graphics2D g2d) {
 
-           // System.out.println(players.size());
             
             int playerOffset = 0;
             int propertyOffset = 25;
@@ -141,6 +140,7 @@ public class Display extends JFrame {
         }
     };
 
+    @SuppressWarnings("Convert2Lambda")
     public static void setupFrame() {
 
         frame.setSize(1000, 1000);

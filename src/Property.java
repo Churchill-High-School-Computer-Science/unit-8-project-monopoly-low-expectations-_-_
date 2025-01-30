@@ -1,47 +1,62 @@
-
 import java.awt.Color;
 
 public class Property {
 
-    Color color;
-    String name;
-    String owner;
-    int numHouses;
-    int mortgage;
-    int unmortgage;
+    private final Color color;
+    private final String name;
+    private final String owner;
+    private  int numHouses;
+    private final int mortgage;
+    private final int unmortgage;
+    private  int baseRent;
+    private  int[] houseRents;
+    private  boolean isRailroad;
+    private  boolean isUtility;
+    private boolean isPurchasable;  
+    private boolean isChance;
+    private boolean isCommunityChest;
 
-    public Property(Color c, String n, String o, int m, int um)
+    public Property(Color c, String n, String o, int nH, int m, int um, int bR, int[] hR, boolean iR, boolean iU, boolean iP, boolean iC, boolean iCC)
     {
 
         color = c;
         name = n;
         owner = o;
+        numHouses = nH;
         mortgage = m;
         unmortgage = um;
+        baseRent = bR;
+        houseRents = hR;
+        isRailroad = iR;
+        isUtility = iU;
+        isPurchasable = iP;
+        isChance = iC;
+        isCommunityChest = iCC; 
     }
 
-    //TODO fix
     public Color getColor(){
         return color;
     }
 
-    //TODO fix
     public String getName(){
         return name;
     }
 
-    //TODO fix
     public int getNumHouses(){
         return numHouses;
     }
 
-    //TODO fix
     public String getOwner(){
-        return "no one";
+        return owner;
     }
 
-    //TODO fix
     public int getRent(){
         return 20;
+    }
+
+    public void addHouse(){
+        if (numHouses < houseRents.length){
+            numHouses++;
+        }
     }
 }
