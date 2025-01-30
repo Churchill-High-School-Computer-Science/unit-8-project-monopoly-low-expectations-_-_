@@ -118,14 +118,4 @@ public class Cards {
         Collections.shuffle(cards);
         return cards.get(0);
     }
-
-    public static void main(String[] args) {
-        System.out.println("Drawing a random Chance card:");
-        Card chanceCard = drawRandomChanceCard();
-        System.out.println(chanceCard.getMessage());
-
-        System.out.println("\nDrawing a random Community Chest card:");
-        Card communityChestCard = drawRandomCommunityChestCard();
-        System.out.println(communityChestCard.getMessage());
-    }
 }
