@@ -4,8 +4,9 @@ public class Property {
 
     private final Color color;
     private final String name;
-    private final String owner;
-    private  int numHouses;
+    @SuppressWarnings("FieldMayBeFinal")
+    private String owner;
+    private int numHouses;
     private final int mortgage;
     private final int unmortgage;
     private  int[] houseRents;
@@ -40,21 +41,45 @@ public class Property {
         return name;
     }
 
-    public int getNumHouses(){
-        return numHouses;
-    }
-
     public String getOwner(){
         return owner;
     }
 
-    public int getRent(){
-        return 20;
+    public int getNumHouses(){
+        return numHouses;
     }
 
-    public void addHouse(){
-        if (numHouses < houseRents.length){
-            numHouses++;
-        }
+    public int getMorgage(){
+        return mortgage;
     }
+
+    public int getUnMorgage(){
+        return unmortgage;
+    }
+
+
+    public int[] getRent(){
+        return houseRents;
+    }
+
+    public boolean isRailroad(){
+        return isRailroad;
+    }
+
+    public boolean isUtility(){
+        return isUtility;
+    }
+
+    public boolean isPurchasable(){
+        return isPurchasable;
+    }
+
+    public boolean isChance(){
+        return isChance;
+    }
+
+    public boolean isCommunityChest(){
+        return isCommunityChest;
+    }
+
 }
