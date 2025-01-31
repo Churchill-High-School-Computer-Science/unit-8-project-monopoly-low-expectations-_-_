@@ -27,8 +27,6 @@ public class Property {
 
         color = c;
         name = n;
-        //owner = o;
-        //numHouses = nH;
         mortgage = m;
         unmortgage = um;
         houseRents = hR;
