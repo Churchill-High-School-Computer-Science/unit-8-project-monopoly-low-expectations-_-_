@@ -23,12 +23,12 @@ public class Property {
     @SuppressWarnings("FieldMayBeFinal")
     private boolean isCommunityChest;
 
-    public Property(Color c, String n, String o, int nH, int m, int um, int[] hR, boolean iR, boolean iU, boolean iP, boolean iC, boolean iCC){
+    public Property(Color c, String n,  int m, int um, int[] hR, boolean iR, boolean iU, boolean iP, boolean iC, boolean iCC){
 
         color = c;
         name = n;
-        owner = o;
-        numHouses = nH;
+        //owner = o;
+        //numHouses = nH;
         mortgage = m;
         unmortgage = um;
         houseRents = hR;
