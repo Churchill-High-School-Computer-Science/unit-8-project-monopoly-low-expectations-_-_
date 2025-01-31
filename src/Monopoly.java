@@ -5,6 +5,10 @@ public class Monopoly {
 
         Board board = new Board();
 
+
+        Player owen = new Player("owen");
+        Display.players.add(owen);
+
         //Graphics!
         SwingUtilities.invokeLater(() -> Display.setupFrame());
 

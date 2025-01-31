@@ -207,14 +207,7 @@ public class Display extends JFrame {
     }
 
     public static int choice(String title, String text, String[] options){
-        return JOptionPane.showOptionDialog(frame,
-                                            text,
-                                            title,
-                                            JOptionPane.YES_NO_OPTION,
-                                            JOptionPane.QUESTION_MESSAGE,
-                                            null,
-                                            options,
-                                            options[0]);
+        return JOptionPane.showOptionDialog(frame, text, title, JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, options,options[0]);
     }
 
     public static void setDiceDisplay(String text){
