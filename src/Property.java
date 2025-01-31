@@ -23,8 +23,7 @@ public class Property {
     @SuppressWarnings("FieldMayBeFinal")
     private boolean isCommunityChest;
 
-    public Property(Color c, String n,  int m, int um, int[] hR, boolean iR, boolean iU, boolean iP, boolean iC, boolean iCC){
-
+    public Property(Color c, String n, int m, int um, int[] hR, boolean iR, boolean iU, boolean iP, boolean iC, boolean iCC) {
         color = c;
         name = n;
         mortgage = m;
@@ -37,52 +36,57 @@ public class Property {
         isCommunityChest = iCC; 
     }
 
-    public Color getColor(){
+    public Color getColor() {
         return color;
     }
 
-    public String getName(){
+    public String getName() {
         return name;
     }
 
-    public String getOwner(){
+    public String getOwner() {
         return owner;
     }
 
-    public int getNumHouses(){
+    public int getNumHouses() {
         return numHouses;
     }
 
-    public int getMorgage(){
+    public int getMortgage() {
         return mortgage;
     }
 
-    public int getUnMorgage(){
+    public int getUnmortgage() { 
         return unmortgage;
     }
 
-    public int[] getRent(){
-        return houseRents;
+    public int getRent(Player owner, int numHouses, boolean ownsAllInColorGroup) {
+        if (numHouses > 0) {
+            return houseRents[numHouses + 1]; 
+        } else if (ownsAllInColorGroup) {
+            return houseRents[1]; 
+        } else {
+            return houseRents[0];
+        }
     }
 
-    public boolean isRailroad(){
+    public boolean isRailroad() {
         return isRailroad;
     }
 
-    public boolean isUtility(){
+    public boolean isUtility() {
         return isUtility;
     }
 
-    public boolean isPurchasable(){
+    public boolean isPurchasable() {
         return isPurchasable;
     }
 
-    public boolean isChance(){
+    public boolean isChance() {
         return isChance;
     }
 
-    public boolean isCommunityChest(){
+    public boolean isCommunityChest() {
         return isCommunityChest;
     }
-
 }
