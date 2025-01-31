@@ -47,7 +47,7 @@ public class Display extends JFrame {
                 for(Player p:players){
                     int xoffset = 0;
                     int yoffset = 0;
-
+                    /*
                     //top row
                     if(p.getLocation() < 11){
                         xoffset = p.getLocation() * 75;
@@ -70,7 +70,30 @@ public class Display extends JFrame {
                         yoffset = (40 - p.getLocation()) * 75;
                         xoffset = 0;
                     }
+                    */
+                                // Top Row (Now Bottom Row)
+                    if (p.getLocation() < 11) { 
+                        xoffset = 750 - (p.getLocation() * 75);
+                        yoffset = 750;
+                    }
 
+                    // Bottom Row (Now Top Row)
+                    else if (p.getLocation() > 19 && p.getLocation() < 31) { 
+                        xoffset = 0 + ((p.getLocation() - 20) * 75);
+                        yoffset = 0;
+                    }
+
+                    // Right Side (Now Left Side)
+                    else if (p.getLocation() > 10 && p.getLocation() < 20) { 
+                        yoffset = 750 - ((p.getLocation() - 10) * 75);
+                        xoffset = 750;
+                    }
+
+                    // Left Side (Now Right Side)
+                    else if (p.getLocation() > 30 && p.getLocation() < 40) { 
+                        yoffset = 0 + ((p.getLocation() - 30) * 75);
+                        xoffset = 0;
+                    }
                     else{
                         System.out.println("Invalid player location.");
                     }
