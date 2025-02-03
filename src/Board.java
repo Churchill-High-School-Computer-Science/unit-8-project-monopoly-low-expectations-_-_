@@ -1,14 +1,18 @@
 import java.awt.Color;
+import java.util.Map;
+import java.util.HashMap;
 
 public class Board {
     
     Property[][] properties = new Property[11][11];
+    static Map<Integer, Property> propertiesMap = new HashMap<>();
 
     public Board() {
 
         Display.properties= properties;
 
         properties[10][10] = new Property(new Color(205, 230, 208), "Go", 0, 0, null, false, false, false, false, false);
+        propertiesMap.put(0, properties[10][10]);
         properties[10][9] = new Property(new Color(0, 114, 187), "Boardwalk", 200, 220, new int[]{50,100,200,600,1400,1700,2000}, false, false, true, false, false);
         properties[10][8] = new Property(new Color(205, 230, 208), "Luxury Tax", 0, 0, null, false, false, false, false, false);
         properties[10][7] = new Property(new Color(0, 114, 187), "Park Place", 175, 193, new int[]{35,70,175,500,1100,1300,1500}, false, false, true, false, false);
@@ -38,7 +42,7 @@ public class Board {
         properties[0][5] = new Property(new Color(0, 0, 0), "Pennsylvania Railroad", 100, 110, new int[]{25,50,100,200}, true, false, true, false, false);
         properties[0][6] = new Property(new Color(217, 58, 150), "Virginia Avenue", 80, 88, new int[]{12,24,60,180,500,700,900}, false, false, true, false, false);
         properties[0][7] = new Property(new Color(217, 58, 150), "States Avenue", 70, 77, new int[]{10,20,50,1550,450,625,750}, false, false, true, false, false);
-        properties[0][8] = new Property(new Color(255, 255, 255), "Electric Compan", 0, 0, new int[]{}, false, true, true, false, false); 
+        properties[0][8] = new Property(new Color(255, 255, 255), "Electric Company", 0, 0, new int[]{}, false, true, true, false, false); 
         properties[0][9] = new Property(new Color(217, 58, 150), "St. Charles Place", 70, 77, new int[]{10,20,50,1550,450,625,750}, false, false, true, false, false);   
         properties[0][10] = new Property(new Color(205, 230, 208), "Jail",  0, 0, null, false, false, false, false, false);
 
