@@ -56,15 +56,14 @@ public class Board {
         properties[9][10] = new Property(new Color(139,87,59), "Mediterranean Avenue", 30, 33, new int[]{2,14,10,30,90,160,250}, false, false, true, false, false);
     
     
-        for (Property[] propertie : properties) {
-            for (Property propertie1 : propertie) {
-                if (propertie1 != null) {
-                    propertiesMap.put(propertiesMap.size(), propertie1);
+        for (int i = 0; i < properties.length; i++) {
+            for (int j = 0; j < properties[i].length; j++) {
+                if (properties[i][j] != null) {
+                    propertiesMap.put(propertiesMap.size(), properties[i][j]);
                 }
             }
         }
         
-        System.out.print(propertiesMap);
     
     }
 }
