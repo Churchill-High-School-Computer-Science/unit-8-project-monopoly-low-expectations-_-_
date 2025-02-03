@@ -1,6 +1,6 @@
 import java.awt.Color;
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 
 public class Board {
     
@@ -12,7 +12,6 @@ public class Board {
         Display.properties= properties;
 
         properties[10][10] = new Property(new Color(205, 230, 208), "Go", 0, 0, null, false, false, false, false, false);
-        propertiesMap.put(0, properties[10][10]);
         properties[10][9] = new Property(new Color(0, 114, 187), "Boardwalk", 200, 220, new int[]{50,100,200,600,1400,1700,2000}, false, false, true, false, false);
         properties[10][8] = new Property(new Color(205, 230, 208), "Luxury Tax", 0, 0, null, false, false, false, false, false);
         properties[10][7] = new Property(new Color(0, 114, 187), "Park Place", 175, 193, new int[]{35,70,175,500,1100,1300,1500}, false, false, true, false, false);
@@ -55,5 +54,17 @@ public class Board {
         properties[7][10] = new Property(new Color(139,87,59), "Baltic Avenue", 30, 33, new int[]{4,8,20,60,180,320,450}, false, false, true, false, false);
         properties[8][10] = new Property(new Color(205, 230, 208), "Community Chest", 0, 0, null, false, false, false, false, true);
         properties[9][10] = new Property(new Color(139,87,59), "Mediterranean Avenue", 30, 33, new int[]{2,14,10,30,90,160,250}, false, false, true, false, false);
+    
+    
+        for (Property[] propertie : properties) {
+            for (Property propertie1 : propertie) {
+                if (propertie1 != null) {
+                    propertiesMap.put(propertiesMap.size(), propertie1);
+                }
+            }
+        }
+        
+        System.out.print(propertiesMap);
+    
     }
 }
