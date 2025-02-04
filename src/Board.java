@@ -40,30 +40,70 @@ public class Board {
         properties[0][4] = new Property(new Color(247, 148, 29), "St. James Place", 90, 99, new int[]{14,28,70,200,550,750,950}, false, false, true, false, false);
         properties[0][5] = new Property(new Color(0, 0, 0), "Pennsylvania Railroad", 100, 110, new int[]{25,50,100,200}, true, false, true, false, false);
         properties[0][6] = new Property(new Color(217, 58, 150), "Virginia Avenue", 80, 88, new int[]{12,24,60,180,500,700,900}, false, false, true, false, false);
-        properties[0][7] = new Property(new Color(217, 58, 150), "States Avenue", 70, 77, new int[]{10,20,50,1550,450,625,750}, false, false, true, false, false);
+        properties[0][7] = new Property(new Color(217, 58, 150), "States Avenue", 70, 77, new int[]{10,20,50,155,450,625,750}, false, false, true, false, false);
         properties[0][8] = new Property(new Color(255, 255, 255), "Electric Company", 0, 0, new int[]{}, false, true, true, false, false); 
-        properties[0][9] = new Property(new Color(217, 58, 150), "St. Charles Place", 70, 77, new int[]{10,20,50,1550,450,625,750}, false, false, true, false, false);   
+        properties[0][9] = new Property(new Color(217, 58, 150), "St. Charles Place", 70, 77, new int[]{10,20,50,155,450,625,750}, false, false, true, false, false);   
         properties[0][10] = new Property(new Color(205, 230, 208), "Jail",  0, 0, null, false, false, false, false, false);
 
         properties[1][10] = new Property(new Color(170, 224, 250), "Connecticut Avenue", 60, 66, new int[]{8,16,40,100,300,450,600}, false, false, true, false, false);
         properties[2][10] = new Property(new Color(170, 224, 250), "Vermont Avenue", 50, 55, new int[]{6,12,30,90,270,400,550}, false, false, true, false, false);
         properties[3][10] = new Property(new Color(205, 230, 208), "Chance", 0, 0, null, false, false, false, true, false);
-        properties[4][10] = new Property(new Color(170, 224, 250), "Oriental Avenue", 55, 55, new int[]{6,12,30,90,2}, false, false, true, false, false);
+        properties[4][10] = new Property(new Color(170, 224, 250), "Oriental Avenue", 55, 55, new int[]{6,12,30,90,270,400,550}, false, false, true, false, false);
         properties[5][10] = new Property(new Color(0, 0, 0), "Reading Railroad", 100, 110, new int[]{25,50,100,200}, true, false, true, false, false);
         properties[6][10] = new Property(new Color(205, 230, 208), "Income Tax", 0, 0, null, false, false, false, false, false);
         properties[7][10] = new Property(new Color(139,87,59), "Baltic Avenue", 30, 33, new int[]{4,8,20,60,180,320,450}, false, false, true, false, false);
         properties[8][10] = new Property(new Color(205, 230, 208), "Community Chest", 0, 0, null, false, false, false, false, true);
         properties[9][10] = new Property(new Color(139,87,59), "Mediterranean Avenue", 30, 33, new int[]{2,14,10,30,90,160,250}, false, false, true, false, false);
     
-    
-        for (int i = 0; i < properties.length; i++) {
-            for (int j = 0; j < properties[i].length; j++) {
-                if (properties[i][j] != null) {
-                    propertiesMap.put(propertiesMap.size(), properties[i][j]);
-                }
-            }
+        propertiesMap.put(1, properties[10][10]); 
+        propertiesMap.put(2, properties[10][9]);  
+        propertiesMap.put(3, properties[10][8]);  
+        propertiesMap.put(4, properties[10][7]);  
+        propertiesMap.put(5, properties[10][6]);  
+        propertiesMap.put(6, properties[10][5]);  
+        propertiesMap.put(7, properties[10][4]); 
+        propertiesMap.put(8, properties[10][3]); 
+        propertiesMap.put(9, properties[10][2]);  
+        propertiesMap.put(10, properties[10][1]); 
+        propertiesMap.put(11, properties[10][0]); 
+
+        propertiesMap.put(12, properties[9][0]);  
+        propertiesMap.put(13, properties[8][0]);  
+        propertiesMap.put(14, properties[7][0]); 
+        propertiesMap.put(15, properties[6][0]);  
+        propertiesMap.put(16, properties[5][0]);  
+        propertiesMap.put(17, properties[4][0]);  
+        propertiesMap.put(18, properties[3][0]);  
+        propertiesMap.put(19, properties[2][0]);  
+        propertiesMap.put(20, properties[1][0]); 
+        propertiesMap.put(21, properties[0][0]);  
+
+        propertiesMap.put(22, properties[0][1]);  
+        propertiesMap.put(23, properties[0][2]); 
+        propertiesMap.put(24, properties[0][3]);  
+        propertiesMap.put(25, properties[0][4]);  
+        propertiesMap.put(26, properties[0][5]); 
+        propertiesMap.put(27, properties[0][6]);  
+        propertiesMap.put(28, properties[0][7]); 
+        propertiesMap.put(29, properties[0][8]);  
+        propertiesMap.put(30, properties[0][9]); 
+        propertiesMap.put(31, properties[0][10]); 
+
+        propertiesMap.put(32, properties[1][10]);
+        propertiesMap.put(33, properties[2][10]); 
+        propertiesMap.put(34, properties[3][10]); 
+        propertiesMap.put(35, properties[4][10]); 
+        propertiesMap.put(36, properties[5][10]); 
+        propertiesMap.put(37, properties[6][10]); 
+        propertiesMap.put(38, properties[7][10]); 
+        propertiesMap.put(39, properties[8][10]); 
+        propertiesMap.put(40, properties[9][10]); 
+
+        for (Map.Entry<Integer, Property> entry : propertiesMap.entrySet()) {
+            System.out.println(entry.getKey() + " -> " + entry.getValue().getName());
         }
         
-    
+
+
     }
 }

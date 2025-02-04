@@ -60,10 +60,10 @@ public class Property {
         return unmortgage;
     }
 
-    public int getRent(Player owner, int numHouses, boolean ownsAllInColorGroup) {
+    public int getRent(Player owner, int numHouses, boolean colorset) {
         if (numHouses > 0) {
             return houseRents[numHouses + 1]; 
-        } else if (ownsAllInColorGroup) {
+        } else if (colorset) {
             return houseRents[1]; 
         } else {
             return houseRents[0];

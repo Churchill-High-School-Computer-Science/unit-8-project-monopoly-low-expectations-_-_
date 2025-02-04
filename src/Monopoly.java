@@ -15,6 +15,7 @@ public class Monopoly {
         Player bob = new Player("bob");
         Display.players.add(bob);
 
+
         //Graphics!
         SwingUtilities.invokeLater(() -> Display.setupFrame());
 
