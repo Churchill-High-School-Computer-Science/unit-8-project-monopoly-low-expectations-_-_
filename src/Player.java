@@ -1,4 +1,4 @@
-
+import java.util.Random;
 import java.util.ArrayList;
 
 /* 
@@ -64,5 +64,12 @@ import java.util.ArrayList;
 
     public int getLocation(){
         return location;
+    }
+    
+    public static int rollDice()
+    {
+        int num1 = (int)(Math.random() *6 +1);
+        int num2 = (int)(Math.random() *6 +1);
+        retu
     }
 }
