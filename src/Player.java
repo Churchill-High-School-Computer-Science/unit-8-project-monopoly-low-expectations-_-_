@@ -1,26 +1,78 @@
-
+import java.lang.Math;
 import java.util.ArrayList;
 
-public class Player {
+/* 
+                 _ _
+                ( Y )
+                 \ /  
+                  \          /^\
+                    )       //^\\
+                 (         //   \\
+                   )      //     \\
+                  __     //       \\
+                 |=^|   //    _    \\
+               __|= |__//    (+)    \\
+              /LLLLLLL//      ~      \\
+             /LLLLLLL//               \\
+            /LLLLLLL//                 \\
+           /LLLLLLL//  |~[|]~| |~[|]~|  \\
+           ^| [|] //   | [|] | | [|] |   \\
+            | [|] ^|   |_[|]_| |_[|]_|   |^
+         ___|______|                     |
+        /LLLLLLLLLL|_____________________|
+       /LLLLL*/public class Player {/*LLLL\
+      /LLLLLLLLLLL/LLLLLLLLLLLLLLLLLLLLLLLL\
+      ^||^^^^^^^^/LLLLLLLLLLLLLLLLLLLLLLLLLL\
+       || |~[|]~|^^||^^^^^^^^^^||^|~[|]~|^||^^
+       || | [|] |  ||  |~~~~|  || | [|] | ||
+       || |_[|]_|  ||  | [] |  || |_[|]_| ||
+       ||__________||  |   o|  ||_________||
+     .'||][][][][][||  | [] |  ||[][][][][||.'.
+    ."'||[][][][][]||_-`----'-_||][][][][]||"."
+  .(')^(.)(').( )'^@/-- -- - --\@( )'( ).(( )^(.)^
+ '( )^(`)'.(').( )@/-- -- - -- -\@ (.)'(.),( ).(').
+ ".'.'." ." '.". @/- - --- -- - -\@ '.".'.".'.".'."
+ ". '' ".".".'.'@/ - -- -- -- -- -\@".'..'".'."'.'.'
+'.".".''.".''."@/ -- --- --- -- - -\@.".''.".''.".'".
 
-    //TODO FIX
+*/
+
+                                                                                                                                                                                                    
+    private String name;
+    private int money;
+    @SuppressWarnings("Convert2Diamond")
+    ArrayList<Property> properties = new ArrayList<Property>();
+    private int location;
+
+    public Player(String n){
+        name = n;
+        money = 1500;
+        location = 0;
+    }
+
     public String getName(){
-        return "no one";
+        return name;
     }
 
-    ///TODO FIX
     public int getMoney(){
-        return 1000;
+        return money;
     }
 
-    //TODO FIX
     public ArrayList<Property> getProperties(){
-        return null;
+        return properties;
     }
 
-    //TODO FIX
-    //Go is the top left corner, location 0. Locations increase by 1 for each property that the player passes clockwise.
     public int getLocation(){
-        return 0;
+         location += rollDice()%40;
+         //Display.boardPanel.repaint();
+         return location;
+         
+
+    }
+    
+    public static int rollDice(){
+        int num1 = (int)(Math.random() *6 +1);
+        int num2 = (int)(Math.random() *6 +1);
+        return num1 + num2;
     }
 }

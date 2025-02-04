@@ -10,6 +10,7 @@ public class Display extends JFrame {
     static ArrayList<Player> players = new ArrayList<>(1);
     static JButton communityChest = new JButton("Community Chest");
     static JButton chance = new JButton("Chance");
+    static JButton dice = new JButton("Roll Dice");
     static JLabel diceDisplay = new JLabel();
     static JFrame frame = new JFrame("Monopoly Game");
     static JPanel boardPanel = new JPanel() {
@@ -48,29 +49,25 @@ public class Display extends JFrame {
                     int xoffset = 0;
                     int yoffset = 0;
 
-                    //top row
-                    if(p.getLocation() < 11){
-                        xoffset = p.getLocation() * 75;
-                    }
-
-                    //bottom row
-                    else if(p.getLocation() > 19 && p.getLocation() < 31){
-                        xoffset = (30 - p.getLocation()) * 75;
+                    if (p.getLocation() < 11) { 
+                        xoffset = 750 - (p.getLocation() * 75);
                         yoffset = 750;
                     }
 
-                    //right side
-                    else if(p.getLocation() > 10 && p.getLocation() < 20){
-                        yoffset = (p.getLocation()-10) * 75;
+                    else if (p.getLocation() > 19 && p.getLocation() < 31) { 
+                        xoffset = 0 + ((p.getLocation() - 20) * 75);
+                        yoffset = 0;
+                    }
+
+                    else if (p.getLocation() > 10 && p.getLocation() < 20) { 
+                        yoffset = 750 - ((p.getLocation() - 10) * 75);
                         xoffset = 750;
                     }
 
-                    else if(p.getLocation() > 30 && p.getLocation() < 40){
-
-                        yoffset = (40 - p.getLocation()) * 75;
+                    else if (p.getLocation() > 30 && p.getLocation() < 40) { 
+                        yoffset = 0 + ((p.getLocation() - 30) * 75);
                         xoffset = 0;
                     }
-
                     else{
                         System.out.println("Invalid player location.");
                     }
@@ -175,8 +172,13 @@ public class Display extends JFrame {
         chance.setBounds(400, 200, 150, 50);
         frame.add(chance);
 
+        dice.setBackground(new Color(255, 153, 0));
+        dice.setBounds(600, 200, 150, 50);
+        frame.add(dice);
+
+
         //Config dice display
-        diceDisplay.setBounds(600, 160, 100, 100);
+        diceDisplay.setBounds(639, 230, 100, 100);
         diceDisplay.setBackground(new Color(255, 255, 255));
         diceDisplay.setText("No rolls yet!");
         frame.add(diceDisplay);
@@ -193,8 +195,18 @@ public class Display extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Cards.Card card = Cards.drawRandomChanceCard();
-                JOptionPane.showMessageDialog(frame, card.getMessage(), "Community Chest", JOptionPane.INFORMATION_MESSAGE);            }
+                JOptionPane.showMessageDialog(frame, card.getMessage(), "Community Chest", JOptionPane.INFORMATION_MESSAGE);            
+            }
         });
+
+        dice.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                diceDisplay.setText(String.valueOf(Monopoly.owen.getLocation())); 
+                 
+            }
+        });
+
 
         // Add the custom board
         boardPanel.setBounds(50, 50, 900, 900);
@@ -207,14 +219,7 @@ public class Display extends JFrame {
     }
 
     public static int choice(String title, String text, String[] options){
-        return JOptionPane.showOptionDialog(frame,
-                                            text,
-                                            title,
-                                            JOptionPane.YES_NO_OPTION,
-                                            JOptionPane.QUESTION_MESSAGE,
-                                            null,
-                                            options,
-                                            options[0]);
+        return JOptionPane.showOptionDialog(frame, text, title, JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, options,options[0]);
     }
 
     public static void setDiceDisplay(String text){
