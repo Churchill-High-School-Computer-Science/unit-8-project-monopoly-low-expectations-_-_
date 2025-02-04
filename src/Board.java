@@ -55,55 +55,49 @@ public class Board {
         properties[8][10] = new Property(new Color(205, 230, 208), "Community Chest", 0, 0, null, false, false, false, false, true);
         properties[9][10] = new Property(new Color(139,87,59), "Mediterranean Avenue", 30, 33, new int[]{2,14,10,30,90,160,250}, false, false, true, false, false);
     
-        propertiesMap.put(1, properties[10][10]); // Go
-        propertiesMap.put(2, properties[9][10]);  // Mediterranean Avenue
-        propertiesMap.put(3, properties[8][10]);  // Community Chest
-        propertiesMap.put(4, properties[7][10]);  // Baltic Avenue
-        propertiesMap.put(5, properties[6][10]);  // Income Tax
-        propertiesMap.put(6, properties[5][10]);  // Reading Railroad
-        propertiesMap.put(7, properties[4][10]);  // Oriental Avenue
-        propertiesMap.put(8, properties[3][10]);  // Chance
-        propertiesMap.put(9, properties[2][10]);  // Vermont Avenue
-        propertiesMap.put(10, properties[1][10]); // Connecticut Avenue
-        propertiesMap.put(11, properties[0][10]); // Jail
+        propertiesMap.put(1, properties[10][10]);
+        propertiesMap.put(2, properties[9][10]);  
+        propertiesMap.put(3, properties[8][10]);  
+        propertiesMap.put(4, properties[7][10]);  
+        propertiesMap.put(5, properties[6][10]);  
+        propertiesMap.put(6, properties[5][10]);  
+        propertiesMap.put(7, properties[4][10]);  
+        propertiesMap.put(8, properties[3][10]);  
+        propertiesMap.put(9, properties[2][10]);  
+        propertiesMap.put(10, properties[1][10]); 
+        propertiesMap.put(11, properties[0][10]);
 
-        propertiesMap.put(12, properties[0][9]);  // St. Charles Place
-        propertiesMap.put(13, properties[0][8]);  // Electric Company
-        propertiesMap.put(14, properties[0][7]);  // States Avenue
-        propertiesMap.put(15, properties[0][6]);  // Virginia Avenue
-        propertiesMap.put(16, properties[0][5]);  // Pennsylvania Railroad
-        propertiesMap.put(17, properties[0][4]);  // St. James Place
-        propertiesMap.put(18, properties[0][3]);  // Community Chest
-        propertiesMap.put(19, properties[0][2]);  // Tennessee Avenue
-        propertiesMap.put(20, properties[0][1]);  // New York Avenue
-        propertiesMap.put(21, properties[0][0]);  // Free Parking
+        propertiesMap.put(12, properties[0][9]);  
+        propertiesMap.put(13, properties[0][8]);  
+        propertiesMap.put(14, properties[0][7]);  
+        propertiesMap.put(15, properties[0][6]);  
+        propertiesMap.put(16, properties[0][5]);  
+        propertiesMap.put(17, properties[0][4]);  
+        propertiesMap.put(18, properties[0][3]);  
+        propertiesMap.put(19, properties[0][2]);  
+        propertiesMap.put(20, properties[0][1]); 
+        propertiesMap.put(21, properties[0][0]);  
 
-        propertiesMap.put(22, properties[1][0]);  // Kentucky Avenue
-        propertiesMap.put(23, properties[2][0]);  // Chance
-        propertiesMap.put(24, properties[3][0]);  // Indiana Avenue
-        propertiesMap.put(25, properties[4][0]);  // Illinois Avenue
-        propertiesMap.put(26, properties[5][0]);  // B&O Railroad
-        propertiesMap.put(27, properties[6][0]);  // Atlantic Avenue
-        propertiesMap.put(28, properties[7][0]);  // Ventnor Avenue
-        propertiesMap.put(29, properties[8][0]);  // Water Works
-        propertiesMap.put(30, properties[9][0]);  // Marvin Gardens
-        propertiesMap.put(31, properties[10][0]); // Go to Jail
+        propertiesMap.put(22, properties[1][0]);  
+        propertiesMap.put(23, properties[2][0]);  
+        propertiesMap.put(24, properties[3][0]);  
+        propertiesMap.put(25, properties[4][0]);  
+        propertiesMap.put(26, properties[5][0]);  
+        propertiesMap.put(27, properties[6][0]);  
+        propertiesMap.put(28, properties[7][0]);  
+        propertiesMap.put(29, properties[8][0]);  
+        propertiesMap.put(30, properties[9][0]);  
+        propertiesMap.put(31, properties[10][0]); 
 
-        propertiesMap.put(32, properties[10][1]); // Pacific Avenue
-        propertiesMap.put(33, properties[10][2]); // North Carolina Avenue
-        propertiesMap.put(34, properties[10][3]); // Community Chest
-        propertiesMap.put(35, properties[10][4]); // Pennsylvania Avenue
-        propertiesMap.put(36, properties[10][5]); // Short Line Railroad
-        propertiesMap.put(37, properties[10][6]); // Chance
-        propertiesMap.put(38, properties[10][7]); // Park Place
-        propertiesMap.put(39, properties[10][8]); // Luxury Tax
-        propertiesMap.put(40, properties[10][9]); // Boardwalk
-
-        for (Map.Entry<Integer, Property> entry : propertiesMap.entrySet()) {
-            System.out.println(entry.getKey() + " -> " + entry.getValue().getName());
-        }
-        
-
+        propertiesMap.put(32, properties[10][1]); 
+        propertiesMap.put(33, properties[10][2]); 
+        propertiesMap.put(34, properties[10][3]); 
+        propertiesMap.put(35, properties[10][4]); 
+        propertiesMap.put(36, properties[10][5]); 
+        propertiesMap.put(37, properties[10][6]); 
+        propertiesMap.put(38, properties[10][7]); 
+        propertiesMap.put(39, properties[10][8]); 
+        propertiesMap.put(40, properties[10][9]); 
 
     }
 }
