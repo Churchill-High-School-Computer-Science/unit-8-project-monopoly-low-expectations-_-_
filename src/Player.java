@@ -64,20 +64,9 @@ import java.util.ArrayList;
     }
 
     public void movePlayer() {
-        int diceroll = rollDice();
-        int newLocation = location + diceroll;
-    
-        
-        if (newLocation >= 40) {
-            newLocation -= 40; 
-            System.out.println(name + " passed GO! Collect $200.");
-            money += 200; 
-        }
-    
-        location = newLocation; 
-    
+        int diceroll = rollDice(); 
+        location = (location + diceroll) % 40; 
         System.out.println(name + " rolled a " + diceroll + " and moved to position " + location);
-        
         
         Display.boardPanel.revalidate();
         Display.boardPanel.repaint();
