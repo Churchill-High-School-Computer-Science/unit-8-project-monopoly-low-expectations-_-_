@@ -161,9 +161,9 @@ public class Display extends JFrame {
         frame.setSize(1000, 1000);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setResizable(false);
-        frame.setLayout(null); // Allow manual positioning
+        frame.setLayout(null); 
 
-        // Configure buttons
+       
         communityChest.setBackground(new Color(51, 153, 255));
         communityChest.setBounds(200, 200, 150, 50);
         frame.add(communityChest);
@@ -202,10 +202,13 @@ public class Display extends JFrame {
         dice.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                diceDisplay.setText(String.valueOf(Monopoly.owen.getLocation())); 
-                 
+                Monopoly.owen.movePlayer();  
+                diceDisplay.setText("Rolled: " + Monopoly.owen.getLocation()); 
+                Display.boardPanel.repaint();
             }
         });
+        
+        
 
 
         // Add the custom board

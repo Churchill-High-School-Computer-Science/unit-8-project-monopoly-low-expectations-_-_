@@ -1,5 +1,6 @@
-import java.lang.Math;
+
 import java.util.ArrayList;
+
 
 /* 
                  _ _
@@ -62,13 +63,33 @@ import java.util.ArrayList;
         return properties;
     }
 
-    public int getLocation(){
-         location += rollDice()%40;
-         //Display.boardPanel.repaint();
-         return location;
-         
-
+    public void movePlayer() {
+        int diceroll = rollDice();
+        int newLocation = location + diceroll;
+    
+        
+        if (newLocation >= 40) {
+            newLocation -= 40; 
+            System.out.println(name + " passed GO! Collect $200.");
+            money += 200; 
+        }
+    
+        location = newLocation; 
+    
+        System.out.println(name + " rolled a " + diceroll + " and moved to position " + location);
+        
+        
+        Display.boardPanel.revalidate();
+        Display.boardPanel.repaint();
+        Display.frame.revalidate();
+        Display.frame.repaint();
     }
+    
+
+    public int getLocation() {
+        return location; 
+    }
+   
     
     public static int rollDice(){
         int num1 = (int)(Math.random() *6 +1);
