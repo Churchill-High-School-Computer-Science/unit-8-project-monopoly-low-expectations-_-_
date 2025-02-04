@@ -63,7 +63,11 @@ import java.util.ArrayList;
     }
 
     public int getLocation(){
-        return location;
+         location += rollDice()%40;
+         //Display.boardPanel.repaint();
+         return location;
+         
+
     }
     
     public static int rollDice(){
