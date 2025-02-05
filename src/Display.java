@@ -205,9 +205,21 @@ public class Display extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 int d = Player.rollDice();
                 diceDisplay.setText(String.valueOf(d));
-                if(Monopoly.turn == 1){
-                    Monopoly.owen.move(d);
+
+                Player currentPlayer;
+                if (Monopoly.turn % 4 == 1) {
+                    currentPlayer = Monopoly.owen;
+                } else if (Monopoly.turn % 4 == 2) {
+                    currentPlayer = Monopoly.allen;
+                } else if (Monopoly.turn % 4 == 3) {
+                    currentPlayer = Monopoly.crace;
+                } else {
+                    currentPlayer = Monopoly.bob;
                 }
+
+                currentPlayer.move(d);
+                Monopoly.turn++;
+                
                 boardPanel.repaint();
                 frame.repaint(); 
             }
