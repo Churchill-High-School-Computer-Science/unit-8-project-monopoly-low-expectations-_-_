@@ -7,6 +7,7 @@ public class Property {
     @SuppressWarnings("FieldMayBeFinal")
     private String owner;
     @SuppressWarnings("FieldMayBeFinal")
+    private int price;
     private int numHouses;
     private final int mortgage;
     private final int unmortgage;
@@ -23,9 +24,10 @@ public class Property {
     @SuppressWarnings("FieldMayBeFinal")
     private boolean isCommunityChest;
 
-    public Property(Color c, String n, int m, int um, int[] hR, boolean iR, boolean iU, boolean iP, boolean iC, boolean iCC) {
+    public Property(Color c, String n, int p, int m, int um, int[] hR, boolean iR, boolean iU, boolean iP, boolean iC, boolean iCC) {
         color = c;
         name = n;
+        price = p;
         mortgage = m;
         unmortgage = um;
         houseRents = hR;
@@ -46,6 +48,10 @@ public class Property {
 
     public String getOwner() {
         return owner;
+    }
+
+    public int getPrice() {
+        return price;
     }
 
     public int getNumHouses() {

@@ -60,13 +60,13 @@ public class Display extends JFrame {
                     }
 
                     else if (p.getLocation() > 10 && p.getLocation() < 20) { 
-                        yoffset = 750 - ((p.getLocation() - 10) * 75);
-                        xoffset = 750;
+                        yoffset = (10 - (p.getLocation() - 10)) * 75;
+                        xoffset = 0;
                     }
 
                     else if (p.getLocation() > 30 && p.getLocation() < 40) { 
                         yoffset = 0 + ((p.getLocation() - 30) * 75);
-                        xoffset = 0;
+                        xoffset = 750;
                     }
                     else{
                         System.out.println("Invalid player location.");
