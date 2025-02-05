@@ -1,7 +1,6 @@
 
 import java.util.ArrayList;
 
-
 /* 
                  _ _
                 ( Y )
@@ -84,5 +83,6 @@ import java.util.ArrayList;
         int num1 = (int)(Math.random() *6 +1);
         int num2 = (int)(Math.random() *6 +1);
         return num1 + num2;
+
     }
 }

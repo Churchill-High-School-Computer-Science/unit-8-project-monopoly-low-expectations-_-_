@@ -89,4 +89,19 @@ public class Property {
     public boolean isCommunityChest() {
         return isCommunityChest;
     }
+
+    //TODO fix
+    public int getNumHouses(){
+        return 5;
+    }
+
+    //TODO fix
+    public String getOwner(){
+        return "no one";
+    }
+
+    //TODO fix
+    public int getRent(){
+        return 20;
+    }
 }

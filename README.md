@@ -54,7 +54,7 @@ Properties (in order)          Cost to buy          Base Rent           Color   
     Chance                          --                  --                  --                  --
     Vermont Avenut                  100                 6                   (0,153,204)         50
     Connecticut Avenue              120                 8                   (0,153,204)         50
-    
+
     Jail                            --                  --                  --                  --
     St. Charles Place               140                 10                  (204,68,204)        100
     Electric Company                150                 2xdice              --                  --
@@ -65,7 +65,7 @@ Properties (in order)          Cost to buy          Base Rent           Color   
     Community Chest                 --                  --                  --                  --
     Tennessee Avenue                180                 14                  (204,68,204)        100
     New York Avenue                 200                 16                  (204,68,204)        100
-    
+
     Free Parking                    --                  --                  --                  --
     Kentucky Avenue                 220                 18                  (255,0,0)           150
     Chance                          --                  --                  --                  --
@@ -75,7 +75,7 @@ Properties (in order)          Cost to buy          Base Rent           Color   
     Atlantic Avenue                 260                 22                  (255,255,51)        150
     Ventnor Avenue                  260                 22                  (255,255,51)        150
     Water Works                     150                 2xdice              --                  --
-    
+
     Marvin Gardens                  280                 24                  (255,255,51)        150
     Go to Jail                      --                  --                  --                  --
     Pacific Avenue                  300                 26                  (51,153,51)         200

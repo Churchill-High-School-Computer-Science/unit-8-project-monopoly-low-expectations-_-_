@@ -68,6 +68,7 @@ public class Display extends JFrame {
                         yoffset = 0 + ((p.getLocation() - 30) * 75);
                         xoffset = 0;
                     }
+
                     else{
                         System.out.println("Invalid player location.");
                     }
@@ -182,7 +183,9 @@ public class Display extends JFrame {
         diceDisplay.setBackground(new Color(255, 255, 255));
         diceDisplay.setText("No rolls yet!");
         frame.add(diceDisplay);
-
+      
+      
+      
         communityChest.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -223,6 +226,7 @@ public class Display extends JFrame {
 
     public static int choice(String title, String text, String[] options){
         return JOptionPane.showOptionDialog(frame, text, title, JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, options,options[0]);
+
     }
 
     public static void setDiceDisplay(String text){
