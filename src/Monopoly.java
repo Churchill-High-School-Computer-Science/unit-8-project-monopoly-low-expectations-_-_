@@ -1,13 +1,14 @@
 import javax.swing.SwingUtilities;
 
 public class Monopoly {
-    static Player owen = new Player("owen");
 
     public static void main(String[] args) {
 
+
+
         Board board = new Board();
 
-
+        Player owen = new Player("owen");
         Display.players.add(owen);
         Player allen = new Player("allen");
         Display.players.add(allen);

@@ -202,8 +202,8 @@ public class Display extends JFrame {
         dice.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                diceDisplay.setText(String.valueOf(Monopoly.owen.getLocation())); 
-                 
+                diceDisplay.setText(String.valueOf(Player.rollDice())); 
+                frame.repaint(); 
             }
         });
 
