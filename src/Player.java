@@ -78,7 +78,7 @@ import java.util.ArrayList;
         //answer: give that player 200$ but why...... bc 
         if(oldLocation > location || location == 0)
         {
-            System.out.println(name + " passed / landed on go. o colect money. ");
+            System.out.println(name + " passed / landed on go.  colect money. ");
             money +=200;
         }
     }
