@@ -70,6 +70,7 @@ public class Display extends JFrame {
                     }
                     else{
                         System.out.println("Invalid player location.");
+                        System.out.println(p.getLocation());
                     }
 
                     g2d.setColor(new Color(255, 0, 255));
@@ -202,7 +203,12 @@ public class Display extends JFrame {
         dice.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                diceDisplay.setText(String.valueOf(Player.rollDice())); 
+                int d = Player.rollDice();
+                diceDisplay.setText(String.valueOf(d));
+                if(Monopoly.turn == 1){
+                    Monopoly.owen.move(d);
+                }
+                boardPanel.repaint();
                 frame.repaint(); 
             }
         });

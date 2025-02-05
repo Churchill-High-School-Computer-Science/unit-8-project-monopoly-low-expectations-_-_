@@ -63,16 +63,27 @@ import java.util.ArrayList;
     }
 
     public int getLocation(){
-         location += rollDice()%40;
+         
+
          //Display.boardPanel.repaint();
          return location;
          
 
     }
+    public void move(int steps){
+        System.out.println("old location for " + name + " :" + location);
+
+        location += steps;
+        location %= 40;
+        System.out.println("new location for " + name + " :" + location);
+        //todo: what happens if you pass go?
+    }
     
     public static int rollDice(){
         int num1 = (int)(Math.random() *6 +1);
         int num2 = (int)(Math.random() *6 +1);
+        System.out.println("rolled" + (num1 + num2));
+
         return num1 + num2;
     }
 }
