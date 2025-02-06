@@ -214,8 +214,8 @@ public class Display extends JFrame {
 
                 }
 
-                currentPlayer.move(d);
                 System.out.println(currentPlayer.getName());
+                currentPlayer.move(d);
                 currentPlayer.buyProperty();
                 Monopoly.turn++;
                 

@@ -63,9 +63,8 @@ import java.util.ArrayList;
 
     public int getLocation(){
         return location;
-         
-
     }
+
     public void move(int steps){
         System.out.println("old location for " + name + " :" + location);
         int oldLocation = location;
@@ -73,10 +72,21 @@ import java.util.ArrayList;
         location += steps;
         location %= 40;
         System.out.println("new location for " + name + " :" + location);
-        if(oldLocation > location || location == 0)
-        {
+        if(oldLocation > location || location == 0) {
             System.out.println(name + " passed / landed on go.  colect money. ");
             money +=200;
+        }
+        if(location == 38) {
+            System.out.println(name + " landed on luxury tax.  pay 100");
+            money -= 100;
+        }
+        if(location == 4) {
+            System.out.println(name + " landed on income tax.  pay 200");
+            money -= 200;
+        }
+        if(location == 30) {
+            System.out.println(name + " landed on go to jail.  go to jail.");
+            location = 10;
         }
     }
     
@@ -106,7 +116,7 @@ import java.util.ArrayList;
             return;
         }
 
-        if (money > temp.getPrice()) {
+        if (money >= temp.getPrice()) {
             money -= temp.getPrice();
             temp.setOwener(this);
             properties.add(temp);
@@ -114,6 +124,8 @@ import java.util.ArrayList;
         } else {
             System.out.println(name + " does not have enough money to buy " + temp.getName());
         }
+
+   
     }
 }
 
