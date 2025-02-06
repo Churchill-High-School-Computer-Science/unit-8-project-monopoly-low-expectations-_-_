@@ -85,11 +85,9 @@ public class Display extends JFrame {
 
         private void drawProperty(Property p, Graphics2D g2d, int x, int y) {
 
-            // Draw color bar
             g2d.setColor(p.getColor());
             g2d.fillRect(x * 75, y * 75, 75, 75 / 4);
 
-            // Draw property name
             int nameOffset = y * 75 + 65;
             g2d.setColor(Color.BLACK);
             g2d.setFont(new Font("SansSerif", Font.PLAIN, 10));
@@ -112,7 +110,6 @@ public class Display extends JFrame {
             else{
                 g2d.drawString(p.getName(), x * 75 + 5, nameOffset);
             }
-            //Draw houses
             g2d.setColor(new Color(50, 168, 82));
             int offset = 0;
             for(int i = 0; i < p.getNumHouses(); i++){
@@ -140,7 +137,6 @@ public class Display extends JFrame {
                             g2d.setColor(property.getColor());
                             g2d.fillRect(150 + playerOffset, 300 + propertyOffset, 75, 75 / 4);
 
-                            // Draw property name
                             g2d.setColor(Color.BLACK);
                             g2d.drawString(property.getName(), 150 + playerOffset, 300 + propertyOffset + 15);
 
@@ -162,9 +158,8 @@ public class Display extends JFrame {
         frame.setSize(1000, 1000);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setResizable(false);
-        frame.setLayout(null); // Allow manual positioning
+        frame.setLayout(null); 
 
-        // Configure buttons
         communityChest.setBackground(new Color(51, 153, 255));
         communityChest.setBounds(200, 200, 150, 50);
         frame.add(communityChest);
@@ -177,8 +172,6 @@ public class Display extends JFrame {
         dice.setBounds(600, 200, 150, 50);
         frame.add(dice);
 
-
-        //Config dice display
         diceDisplay.setBounds(639, 230, 100, 100);
         diceDisplay.setBackground(new Color(255, 255, 255));
         diceDisplay.setText("No rolls yet!");
@@ -209,12 +202,22 @@ public class Display extends JFrame {
                 Player currentPlayer;
                 if (Monopoly.turn % 4 == 1) {
                     currentPlayer = Monopoly.owen;
+                    System.out.println(currentPlayer.getName());
+                    currentPlayer.buyProperty();
                 } else if (Monopoly.turn % 4 == 2) {
                     currentPlayer = Monopoly.allen;
+                    System.out.println(currentPlayer.getName());
+                    currentPlayer.buyProperty();
                 } else if (Monopoly.turn % 4 == 3) {
                     currentPlayer = Monopoly.crace;
+                    System.out.println(currentPlayer.getName());
+                    currentPlayer.buyProperty();
+
                 } else {
                     currentPlayer = Monopoly.bob;
+                    System.out.println(currentPlayer.getName());
+                    currentPlayer.buyProperty();
+
                 }
 
                 currentPlayer.move(d);

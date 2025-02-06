@@ -74,8 +74,6 @@ import java.util.ArrayList;
         location += steps;
         location %= 40;
         System.out.println("new location for " + name + " :" + location);
-        //todo: what happens if you pass go?
-        //answer: give that player 200$ but why...... bc 
         if(oldLocation > location || location == 0)
         {
             System.out.println(name + " passed / landed on go.  colect money. ");
@@ -92,33 +90,32 @@ import java.util.ArrayList;
     }
 
     public void buyProperty(){
-    Property temp = Board.propertiesMap.get(location); 
+        Property temp = Board.propertiesMap.get(location); 
 
-    if (temp == null) {
-        System.out.println("No property available to buy here.");
-        return; 
+        if (temp == null) {
+            System.out.println("No property available to buy here.");
+            return; 
+        }
+
+        if (!temp.isPurchasable()) {
+            System.out.println("This property cannot be purchased.");
+            return; 
+        }
+
+        if (temp.getOwner() != null) {
+            System.out.println("This property is already owned by " + temp.getOwner());
+            return;
+        }
+
+        if (money > temp.getPrice()) {
+            money -= temp.getPrice();
+            temp.setOwener(this);
+            properties.add(temp);
+            System.out.println(name + " bought " + temp.getName() + " for $" + temp.getPrice());
+        } else {
+            System.out.println(name + " does not have enough money to buy " + temp.getName());
+        }
     }
-
-    if (!temp.isPurchasable()) {
-        System.out.println("This property cannot be purchased.");
-        return; 
-    }
-
-    if (temp.getOwner() != null) {
-        System.out.println("This property is already owned by " + temp.getOwner());
-        return;
-    }
-
-    if (money < temp.getPrice()) {
-        System.out.println(name + " does not have enough money to buy " + temp.getName());
-        return; 
-    }
-            
-            
-       
-    }
-
-
 }
 
     

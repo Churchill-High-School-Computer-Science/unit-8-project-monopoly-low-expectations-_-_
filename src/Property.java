@@ -5,7 +5,7 @@ public class Property {
     private final Color color;
     private final String name;
     @SuppressWarnings("FieldMayBeFinal")
-    private String owner;
+    private Player owner = null;
     @SuppressWarnings("FieldMayBeFinal")
     private int price;
     private int numHouses;
@@ -46,8 +46,12 @@ public class Property {
         return name;
     }
 
-    public String getOwner() {
+    public Player getOwner() {
         return owner;
+    }
+
+    public void setOwener(Player owner) {
+        this.owner = owner;
     }
 
     public int getPrice() {

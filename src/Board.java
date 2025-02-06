@@ -11,7 +11,6 @@ public class Board {
 
         Display.properties= properties;
 
-        //bottom row, right to left
         properties[10][10] = new Property(new Color(153, 153, 153), "Go", 0, 0, 0, null, false, false, false, false, false);
         properties[10][9] = new Property(new Color(0, 114, 187), "Boardwalk", 400, 200, 220, new int[]{50,100,200,600,1400,1700,2000}, false, false, true, false, false);
         properties[10][8] = new Property(new Color(205, 230, 208), "Luxury Tax",0, 0, 0, null, false, false, false, false, false);
@@ -56,28 +55,28 @@ public class Board {
         properties[8][10] = new Property(new Color(205, 230, 208), "Community Chest",0,  0, 0, null, false, false, false, false, true);
         properties[9][10] = new Property(new Color(139,87,59), "Mediterranean Avenue",60, 30, 33, new int[]{2,14,10,30,90,160,250}, false, false, true, false, false);
     
-        propertiesMap.put(0, properties[10][10]); //
-        propertiesMap.put(1, properties[9][10]);  //
-        propertiesMap.put(2, properties[8][10]);  //
-        propertiesMap.put(3, properties[7][10]);  //
-        propertiesMap.put(4, properties[6][10]);  //
-        propertiesMap.put(5, properties[5][10]);  //
-        propertiesMap.put(6, properties[4][10]);  //validated up to here
-        propertiesMap.put(7, properties[3][10]);  //
-        propertiesMap.put(8, properties[2][10]);  //
-        propertiesMap.put(9, properties[1][10]);  //
-        propertiesMap.put(10, properties[0][10]); //validated up to here
+        propertiesMap.put(0, properties[10][10]); 
+        propertiesMap.put(1, properties[9][10]);  
+        propertiesMap.put(2, properties[8][10]);  
+        propertiesMap.put(3, properties[7][10]);  
+        propertiesMap.put(4, properties[6][10]);  
+        propertiesMap.put(5, properties[5][10]);  
+        propertiesMap.put(6, properties[4][10]);  
+        propertiesMap.put(7, properties[3][10]);  
+        propertiesMap.put(8, properties[2][10]);  
+        propertiesMap.put(9, properties[1][10]);  
+        propertiesMap.put(10, properties[0][10]); 
 
-        propertiesMap.put(11, properties[0][9]);  //
-        propertiesMap.put(12, properties[0][8]);  //
-        propertiesMap.put(13, properties[0][7]); // 
-        propertiesMap.put(14, properties[0][6]);  //
+        propertiesMap.put(11, properties[0][9]);  
+        propertiesMap.put(12, properties[0][8]);  
+        propertiesMap.put(13, properties[0][7]); 
+        propertiesMap.put(14, properties[0][6]);  
         propertiesMap.put(15, properties[0][5]);  
         propertiesMap.put(16, properties[0][4]);  
         propertiesMap.put(17, properties[0][3]);  
         propertiesMap.put(18, properties[0][2]);  
         propertiesMap.put(19, properties[0][1]); 
-        propertiesMap.put(20, properties[0][0]);  //validated up to here
+        propertiesMap.put(20, properties[0][0]);  
 
         propertiesMap.put(21, properties[1][0]);  
         propertiesMap.put(22, properties[2][0]);  
@@ -88,7 +87,7 @@ public class Board {
         propertiesMap.put(27, properties[7][0]);  
         propertiesMap.put(28, properties[8][0]);  
         propertiesMap.put(29, properties[9][0]);  
-        propertiesMap.put(30, properties[10][0]); //validated up to here
+        propertiesMap.put(30, properties[10][0]); 
 
         propertiesMap.put(31, properties[10][1]); 
         propertiesMap.put(32, properties[10][2]); 
