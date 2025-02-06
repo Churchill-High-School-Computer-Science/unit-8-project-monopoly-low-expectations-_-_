@@ -202,25 +202,21 @@ public class Display extends JFrame {
                 Player currentPlayer;
                 if (Monopoly.turn % 4 == 1) {
                     currentPlayer = Monopoly.owen;
-                    System.out.println(currentPlayer.getName());
-                    currentPlayer.buyProperty();
+
                 } else if (Monopoly.turn % 4 == 2) {
                     currentPlayer = Monopoly.allen;
-                    System.out.println(currentPlayer.getName());
-                    currentPlayer.buyProperty();
+
                 } else if (Monopoly.turn % 4 == 3) {
                     currentPlayer = Monopoly.crace;
-                    System.out.println(currentPlayer.getName());
-                    currentPlayer.buyProperty();
-
+ 
                 } else {
                     currentPlayer = Monopoly.bob;
-                    System.out.println(currentPlayer.getName());
-                    currentPlayer.buyProperty();
 
                 }
 
                 currentPlayer.move(d);
+                System.out.println(currentPlayer.getName());
+                currentPlayer.buyProperty();
                 Monopoly.turn++;
                 
                 boardPanel.repaint();

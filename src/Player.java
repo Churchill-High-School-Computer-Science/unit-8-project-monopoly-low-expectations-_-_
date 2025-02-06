@@ -1,4 +1,3 @@
-import java.lang.Math;
 import java.util.ArrayList;
 
 /* 
@@ -96,7 +95,7 @@ import java.util.ArrayList;
             System.out.println("No property available to buy here.");
             return; 
         }
-
+        
         if (!temp.isPurchasable()) {
             System.out.println("This property cannot be purchased.");
             return; 
