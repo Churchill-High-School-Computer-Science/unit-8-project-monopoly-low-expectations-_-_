@@ -7,6 +7,16 @@ public class Board {
     Property[][] properties = new Property[11][11];
     static Map<Integer, Property> propertiesMap = new HashMap<>();
 
+    public static int getTotalPropertiesInColorSet(Color color) {
+        int count = 0;
+        for (Property prop : propertiesMap.values()) {
+            if (prop.getColor().equals(color)) {
+                count++;
+            }
+        }
+        return count;
+    }
+    
     public Board() {
 
         Display.properties= properties;

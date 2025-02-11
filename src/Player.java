@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.util.ArrayList;
 
 /* 
@@ -39,94 +40,146 @@ import java.util.ArrayList;
                                                                                                                                                                                                     
     private String name;
     private int money;
-    @SuppressWarnings("Convert2Diamond")
-    ArrayList<Property> properties = new ArrayList<Property>();
+    private ArrayList<Property> properties;
     private int location;
 
-    public Player(String n){
-        name = n;
-        money = 1500;
-        location = 0;
+    public Player(String name) {
+        this.name = name;
+        this.money = 1500;
+        this.location = 0;
+        this.properties = new ArrayList<>();
     }
 
-    public String getName(){
+    public String getName() {
         return name;
     }
 
-    public int getMoney(){
+    public int getMoney() {
         return money;
     }
 
-    public ArrayList<Property> getProperties(){
+    public ArrayList<Property> getProperties() {
         return properties;
     }
 
-    public int getLocation(){
+    public int getLocation() {
         return location;
     }
 
-    public void move(int steps){
-        System.out.println("old location for " + name + " :" + location);
+    public void addMoney(int amount) {
+        this.money += amount;
+    }
+
+    public void move(int steps) {
+        System.out.println("Old location for " + name + " :" + location);
         int oldLocation = location;
 
         location += steps;
         location %= 40;
-        System.out.println("new location for " + name + " :" + location);
-        if(oldLocation > location || location == 0) {
-            System.out.println(name + " passed / landed on go.  colect money. ");
-            money +=200;
+        System.out.println("New location for " + name + " :" + location);
+
+        if (oldLocation > location || location == 0) {
+            System.out.println(name + " passed / landed on GO. Collect $200.");
+            money += 200;
         }
-        if(location == 38) {
-            System.out.println(name + " landed on luxury tax.  pay 100");
+        if (location == 38) {
+            System.out.println(name + " landed on Luxury Tax. Pay $100.");
             money -= 100;
         }
-        if(location == 4) {
-            System.out.println(name + " landed on income tax.  pay 200");
+        if (location == 4) {
+            System.out.println(name + " landed on Income Tax. Pay $200.");
             money -= 200;
         }
-        if(location == 30) {
-            System.out.println(name + " landed on go to jail.  go to jail.");
+        if (location == 30) {
+            System.out.println(name + " landed on Go to Jail. Moving to Jail.");
             location = 10;
         }
     }
-    
-    public static int rollDice(){
-        int num1 = (int)(Math.random() *6 +1);
-        int num2 = (int)(Math.random() *6 +1);
-        System.out.println("rolled " + (num1 + num2));
+
+    public static int rollDice() {
+        int num1 = (int) (Math.random() * 6 + 1);
+        int num2 = (int) (Math.random() * 6 + 1);
+        System.out.println("Rolled: " + (num1 + num2));
 
         return num1 + num2;
     }
 
-    public void buyProperty(){
-        Property temp = Board.propertiesMap.get(location); 
+    public void buyProperty(int diceRoll) {
+        Property temp = Board.propertiesMap.get(location);
 
         if (temp == null) {
             System.out.println("No property available to buy here.");
-            return; 
-        }
-        
-        if (!temp.isPurchasable()) {
-            System.out.println("This property cannot be purchased.");
-            return; 
+            return;
         }
 
-        if (temp.getOwner() != null) {
-            System.out.println("This property is already owned by " + temp.getOwner());
+        if (!temp.isPurchasable()) {
+            System.out.println("This property cannot be purchased.");
+            return;
+        }
+
+        if (temp.getOwner() != null && temp.getOwner() != this) {
+            System.out.println("This property is already owned by " + temp.getOwner().getName());
+
+            int rent;
+            if (temp.isRailroad()) {
+                int railroadsOwned = temp.getOwner().countRailroads();
+                rent = 25 * (int) Math.pow(2, railroadsOwned - 1); 
+            } else if (temp.isUtility()) {
+                rent = diceRoll * (temp.getOwner().ownsBothUtilities() ? 10 : 4); 
+            } else {
+                boolean colorset = temp.getOwner().ownsAllInColor(temp.getColor());
+                rent = temp.getRent(temp.getOwner(), temp.getNumHouses(), colorset);
+            }
+
+            if (money >= rent) {
+                money -= rent;
+                temp.getOwner().addMoney(rent);
+                System.out.println(name + " paid $" + rent + " to " + temp.getOwner().getName());
+            } else {
+                System.out.println(name + " cannot afford rent and is bankrupt!");
+            }
             return;
         }
 
         if (money >= temp.getPrice()) {
             money -= temp.getPrice();
-            temp.setOwener(this);
+            temp.setOwner(this);
             properties.add(temp);
             System.out.println(name + " bought " + temp.getName() + " for $" + temp.getPrice());
         } else {
             System.out.println(name + " does not have enough money to buy " + temp.getName());
         }
+    }
 
-   
+    public int countRailroads() {
+        int count = 0;
+        for (Property prop : properties) {
+            if (prop.isRailroad()) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    public boolean ownsBothUtilities() {
+        int count = 0;
+        for (Property prop : properties) {
+            if (prop.isUtility()) {
+                count++;
+            }
+        }
+        return count == 2;
+    }
+
+    public boolean ownsAllInColor(Color color) {
+        int count = 0;
+        int totalInSet = Board.getTotalPropertiesInColorSet(color);
+
+        for (Property prop : properties) {
+            if (prop.getColor().equals(color)) {
+                count++;
+            }
+        }
+        return count == totalInSet;
     }
 }
-
-    

@@ -1,41 +1,32 @@
 import java.awt.Color;
 
 public class Property {
-
     private final Color color;
     private final String name;
-    @SuppressWarnings("FieldMayBeFinal")
     private Player owner = null;
-    @SuppressWarnings("FieldMayBeFinal")
-    private int price;
-    private int numHouses;
+    private final int price;
+    private int numHouses;//sigma boy sigma sigma owen was not herer
     private final int mortgage;
     private final int unmortgage;
-    @SuppressWarnings("FieldMayBeFinal")
-    private int[] houseRents;
-    @SuppressWarnings("FieldMayBeFinal")
-    private boolean isRailroad;
-    @SuppressWarnings("FieldMayBeFinal")
-    private boolean isUtility;
-    @SuppressWarnings("FieldMayBeFinal")
-    private boolean isPurchasable;  
-    @SuppressWarnings("FieldMayBeFinal")
-    private boolean isChance;
-    @SuppressWarnings("FieldMayBeFinal")
-    private boolean isCommunityChest;
+    private final int[] houseRents;
+    private final boolean isRailroad;
+    private final boolean isUtility;
+    private boolean isPurchasable;
+    private final boolean isChance;
+    private final boolean isCommunityChest;
 
     public Property(Color c, String n, int p, int m, int um, int[] hR, boolean iR, boolean iU, boolean iP, boolean iC, boolean iCC) {
-        color = c;
-        name = n;
-        price = p;
-        mortgage = m;
-        unmortgage = um;
-        houseRents = hR;
-        isRailroad = iR;
-        isUtility = iU;
-        isPurchasable = iP;
-        isChance = iC;
-        isCommunityChest = iCC; 
+        this.color = c;
+        this.name = n;
+        this.price = p;
+        this.mortgage = m;
+        this.unmortgage = um;
+        this.houseRents = hR;
+        this.isRailroad = iR;
+        this.isUtility = iU;
+        this.isPurchasable = iP;
+        this.isChance = iC;
+        this.isCommunityChest = iCC;
     }
 
     public Color getColor() {
@@ -50,8 +41,12 @@ public class Property {
         return owner;
     }
 
-    public void setOwener(Player owner) {
+    public void setOwner(Player owner) {
         this.owner = owner;
+    }
+
+    public void removeOwner() {
+        this.owner = null;
     }
 
     public int getPrice() {
@@ -66,15 +61,18 @@ public class Property {
         return mortgage;
     }
 
-    public int getUnmortgage() { 
+    public int getUnmortgage() {
         return unmortgage;
     }
 
     public int getRent(Player owner, int numHouses, boolean colorset) {
+        if (numHouses >= houseRents.length) {
+            return houseRents[houseRents.length - 1]; 
+        }
         if (numHouses > 0) {
-            return houseRents[numHouses + 1]; 
+            return houseRents[numHouses];
         } else if (colorset) {
-            return houseRents[1]; 
+            return houseRents[1];
         } else {
             return houseRents[0];
         }
@@ -90,6 +88,10 @@ public class Property {
 
     public boolean isPurchasable() {
         return isPurchasable;
+    }
+
+    public void setPurchasable(boolean purchasable) {
+        this.isPurchasable = purchasable;
     }
 
     public boolean isChance() {

@@ -216,7 +216,7 @@ public class Display extends JFrame {
 
                 System.out.println(currentPlayer.getName());
                 currentPlayer.move(d);
-                currentPlayer.buyProperty();
+                currentPlayer.buyProperty(Player.rollDice());
                 Monopoly.turn++;
                 
                 boardPanel.repaint();
